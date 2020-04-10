@@ -22,7 +22,6 @@ class Login extends Component {
     });
   }
   handleLoginClick(event) {
-    debugger;
     event.preventDefault();
     login(this.state.user)
       .then((reponse) => {

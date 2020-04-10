@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import {Switch, Route} from "react-router-dom";
 import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class App extends Component {
         )}
         <Switch>
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </div>
     );
