@@ -34,3 +34,13 @@ export const login = (user)=>{
         setUser(response.data);
     })
 }
+
+export const logout = (user)=>{
+    return axios({
+        method: "GET",
+        url: "logout",
+    })
+    .then((response)=> {
+        window.localStorage.removeItem('user');
+    })
+}
