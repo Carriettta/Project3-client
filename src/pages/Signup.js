@@ -42,34 +42,34 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-      <h1>Signup</h1>
+      <div className="container is-fluid">
+      <h1 className="title">Signup</h1>
       <form>
         <input
-          onChange={this.handleInputChange}
-          value={this.state.username}
-          className="input"
+          type="text"
           name="username"
-          type="text"
           placeholder="username"
+          className="input"
+          value={this.state.username}
+          onChange={this.handleInputChange}
         />
         <input
-          onChange={this.handleInputChange}
-          value={this.state.password}
-          className="input"
-          name="password"
           type="password"
+          name="password"
           placeholder="password"
+          className="input"
+          value={this.state.password}
+          onChange={this.handleInputChange} 
         />
         <input
-          onChange={this.handleInputChange}
-          value={this.state.email}
-          className="input"
-          name="email"
           type="text"
+          name="email"
           placeholder="email"
+          className="input"
+          value={this.state.email}
+          onChange={this.handleInputChange}
         />
-        <button className="is-primary button" onClick={this.handleSignupClick}>
+        <button className="button" onClick={this.handleSignupClick}>
           Signup
         </button>
         {this.state.error && (

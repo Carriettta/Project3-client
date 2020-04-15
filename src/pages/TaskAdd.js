@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import qs from "qs";
-import { getUser } from "../utils/auth";
+// import { getUser } from "../utils/auth";
 
 class TaskAdd extends Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    let user = getUser()
+    // let user = getUser()
   }
   state = {
     task: {
@@ -27,6 +27,7 @@ class TaskAdd extends Component {
       url: "http://localhost:3000/add",
       data: qs.stringify(this.state),
       method: "POST",
+      withCredentials: true
     })
       .then(() => {
         this.props.history.push("/tasks");
@@ -37,17 +38,18 @@ class TaskAdd extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Add Task</h1>
+      <div className="container is-fluid">
+        <h1 className="title">Add Task</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="title"
             placeholder="title"
+            className="input"
             value={this.state.value}
             onChange={this.handleInputChange}
           />
-          <button type="submit">Add task</button>
+          <button type="submit" className="button">Add task</button>
         </form>
       </div>
     );

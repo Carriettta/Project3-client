@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #84b9c2;
+  background-image: url("https://www.transparenttextures.com/patterns/flowers.png");
+  height: 100vh;
 }
 
 code {

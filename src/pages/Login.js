@@ -42,24 +42,26 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h1>login page</h1>
+      <div className="container is-fluid">
+        <h1 className="title">Login</h1>
         <form>
           <input
             type="text"
             name="username"
             placeholder="username"
+            className="input"
             value={this.state.username}
             onChange={this.handleInputChange}
           />
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="password"
+            className="input"
             value={this.state.password}
             onChange={this.handleInputChange}
           />
-          <button className="is-primary button" onClick={this.handleLoginClick}>
+          <button className="button" onClick={this.handleLoginClick}>
             Login
           </button>
         </form>
