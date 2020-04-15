@@ -37,11 +37,15 @@ export const login = (user)=>{
 }
 
 export const logout = (user)=>{
+    window.localStorage.removeItem('user');
     return axios({
         method: "GET",
         url: "logout",
     })
     .then((response)=> {
-        window.localStorage.removeItem('user');
+       
+    })
+    .catch((err)=> {
+        setUser(user);
     })
 }

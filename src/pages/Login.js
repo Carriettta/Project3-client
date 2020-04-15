@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { login } from "../utils/auth";
+import Navbar from "../components/Navbar";
 
 class Login extends Component {
   constructor(props) {
@@ -42,30 +43,33 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="container is-fluid">
-        <h1 className="title">Login</h1>
-        <form>
-          <input
-            type="text"
-            name="username"
-            placeholder="username"
-            className="input"
-            value={this.state.username}
-            onChange={this.handleInputChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            className="input"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-          />
-          <button className="button" onClick={this.handleLoginClick}>
-            Login
-          </button>
-        </form>
-      </div>
+      <>
+        <Navbar />
+        <div className="container is-fluid">
+          <h1 className="title">Login</h1>
+          <form>
+            <input
+              type="text"
+              name="username"
+              placeholder="username"
+              className="input"
+              value={this.state.username}
+              onChange={this.handleInputChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="password"
+              className="input"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+            />
+            <button className="button" onClick={this.handleLoginClick}>
+              Login
+            </button>
+          </form>
+        </div>
+      </>
     );
   }
 }

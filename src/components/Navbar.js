@@ -5,11 +5,9 @@ import { logout } from "../utils/auth";
 
 function Navbar() {
   let user = getUser();
-
   function handleLogout() {
     logout(user);
   }
-
   return (
     <div>
       {user ? (

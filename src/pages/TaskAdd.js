@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import qs from "qs";
-// import { getUser } from "../utils/auth";
-
+import Navbar from "../components/Navbar";
 class TaskAdd extends Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // let user = getUser()
   }
   state = {
     task: {
@@ -38,6 +36,8 @@ class TaskAdd extends Component {
   }
   render() {
     return (
+      <>
+      <Navbar/>
       <div className="container is-fluid">
         <h1 className="title">Add Task</h1>
         <form onSubmit={this.handleSubmit}>
@@ -52,6 +52,7 @@ class TaskAdd extends Component {
           <button type="submit" className="button">Add task</button>
         </form>
       </div>
+      </>
     );
   }
 }
